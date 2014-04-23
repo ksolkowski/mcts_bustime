@@ -21,6 +21,7 @@ Or install it yourself as:
 TODO: Write usage instructions here
 
 ## Contributing
+more info http://realtime.ridemcts.com/bustime/apidoc/v1/DeveloperAPIGuide.pdf
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)

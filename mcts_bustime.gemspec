@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = MctsBustime::VERSION
   spec.authors       = ["Kevin Solkowski"]
   spec.email         = ["ksolkowski@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
+  spec.description   = %q{Gem for talking to the mcts bustime api}
   spec.summary       = %q{TODO: Write a gem summary}
   spec.homepage      = ""
   spec.license       = "MIT"
