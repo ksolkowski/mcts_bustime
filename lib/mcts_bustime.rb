@@ -1,5 +1,6 @@
 require 'rest_client'
 require 'nokogiri'
+require 'yaml'
 require 'active_support/core_ext/hash/conversions'
 
 class MctsBustime
@@ -16,8 +17,12 @@ class MctsBustime
     api_url = @url + method
     uri_params = URI.encode_www_form params
     response = RestClient::Request.execute(:method => :get, :url => api_url+"?key=#{@api_key}&#{uri_params}", :timeout => -1)
-    doc = Nokogiri::XML.parse(response)
-    Hash.from_xml(doc.to_s)
+    if !(params[:format] && params[:format].include?("json"))
+      doc = Nokogiri::XML.parse(response)
+      Hash.from_xml(doc.to_s)
+    else
+      YAML.load response
+    end
   end
 
   def method_missing(method, *args)
