@@ -18,7 +18,8 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+mcts = MctsBustime.new("API_KEY")
+lits of other things are on that site
 
 ## Contributing
 more info http://realtime.ridemcts.com/bustime/apidoc/v1/DeveloperAPIGuide.pdf
