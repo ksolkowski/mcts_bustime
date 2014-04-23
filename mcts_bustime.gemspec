@@ -1,19 +1,15 @@
 # coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'mcts_bustime/version'
-
 Gem::Specification.new do |spec|
   spec.name          = "mcts_bustime"
-  spec.version       = MctsBustime::VERSION
+  spec.version       = "0.0.1"
   spec.authors       = ["Kevin Solkowski"]
   spec.email         = ["ksolkowski@gmail.com"]
   spec.description   = %q{Gem for talking to the mcts bustime api}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.summary       = %q{Summary of this gem!}
   spec.homepage      = ""
   spec.license       = "MIT"
 
-  spec.files         = `git ls-files`.split($/)
+  spec.files         = ["lib/mcts_bustime.rb"]
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
