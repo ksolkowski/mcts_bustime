@@ -1,5 +1,6 @@
 require 'rest_client'
 require 'nokogiri'
+require 'active_support/core_ext/hash/conversions'
 
 class MctsBustime
   attr_accessor :api_key
@@ -15,8 +16,8 @@ class MctsBustime
     api_url = @url + method
     uri_params = URI.encode_www_form params
     response = RestClient::Request.execute(:method => :get, :url => api_url+"?key=#{@api_key}&#{uri_params}", :timeout => -1)
-
-    response
+    doc = Nokogiri::XML.parse(response)
+    Hash.from_xml(doc.to_s)
   end
 
   def method_missing(method, *args)
