@@ -16,23 +16,20 @@ class MctsBustime
   def call(method, params = {})
     api_url = @url + method
     uri_params = URI.encode_www_form params
+    puts api_url+"?key=#{@api_key}&#{uri_params}" if @debug == true
     response = RestClient::Request.execute(:method => :get, :url => api_url+"?key=#{@api_key}&#{uri_params}", :timeout => -1)
     if !(params[:format] && params[:format].include?("json"))
       doc = Nokogiri::XML.parse(response)
-      Hash.from_xml(doc.to_s)
+      hash = Hash.from_xml(doc.to_s)
     else
-      YAML.load response
+      hash = YAML.load(response)
     end
+    
+    hash
   end
 
   def method_missing(method, *args)
     method = method.to_s
     call("#{method}", *args)
   end
-
-  def request_whois
-    response = RestClient::Request.execute(:method => :get, :url => 'http://realtime.ridemcts.com/bustime/api/v1/getvehicles?key=GxV35GtQW6Zw3HEE6x5QeJdZR&rt=21&format=json', :timeout => -1)
-    puts "#{@url}/gettime?key=#{@api_key}"
-  end
-  # Your code goes here...
 end
