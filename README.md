@@ -16,13 +16,14 @@ Or install it yourself as:
 
     $ gem install mcts_bustime
 
+
 ## Usage
 
 mcts = MctsBustime.new("API_KEY")
-lits of other things are on that site
 
 ## Contributing
 more info http://realtime.ridemcts.com/bustime/apidoc/v1/DeveloperAPIGuide.pdf
+or http://realtime.ridemcts.com/bustime/apidoc/v1/main.jsp?section=documentation.jsp
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)

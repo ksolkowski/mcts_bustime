@@ -24,8 +24,9 @@ class MctsBustime
     else
       hash = YAML.load(response)
     end
-    
-    hash
+
+    response_hash =  hash["bustime_response"]
+    response_hash
   end
 
   def method_missing(method, *args)
