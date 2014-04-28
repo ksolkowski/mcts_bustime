@@ -18,7 +18,7 @@ Or install it yourself as:
 
 # Requests
 ###[GetTime](http://realtime.ridemcts.com/bustime/apidoc/v1/main.jsp?section=time.jsp)
-`mcts.gettime(params)`
+`mcts.get_time(params)`
 
 ####params :
 `{"localestring" => "es/en_US"}` -- optional
@@ -28,7 +28,7 @@ Or install it yourself as:
 `{"tm" => "YYYYMMDD HH:MM:SS"}`
 
 ###[GetRoutes](http://realtime.ridemcts.com/bustime/apidoc/v1/main.jsp?section=time.jsp)
-`mcts.getroutes(params)`
+`mcts.get_routes(params)`
 ####params : 
 `{"localestring" => "es/en_US"}` -- optional
 
@@ -37,7 +37,7 @@ Or install it yourself as:
 `{"route"=>{"rt"=>"21", "rtnm"=>"ROUTE 21", "rtclr"=>"#3399cc"}}`
 
 ###[GetVehicles](http://realtime.ridemcts.com/bustime/apidoc/v1/main.jsp?section=vehicles.jsp)
-`mcts.getvehicles(params)`
+`mcts.get_vehicles(params)`
 ####params : 
 `{"rt" => [route numbers], "vid" => [vehicle ids], "format" => "json/xml", "localestring" => "es/en_US"}`
 Note: Max of 10 vid's or rt's, use either rt or vid cannot use both
@@ -47,7 +47,7 @@ Note: Max of 10 vid's or rt's, use either rt or vid cannot use both
 `{"vehicle"=>[{"vid"=>"5328", "tmstmp"=>"20140425 16:43", "lat"=>"43.0601806640625", "lon"=>"-88.04215240478516", "hdg"=>"88", "pid"=>"12", "rt"=>"21", "des"=>"NORTH AVENUE TO UWM", "pdist"=>"4836", "spd"=>"41", "tablockid"=>"21 -307", "tatripid"=>"4203", "zone"=>nil}]}`
 
 ###[GetDirections](http://realtime.ridemcts.com/bustime/apidoc/v1/main.jsp?section=routeDirections.jsp)
-`mcts.getdirections(params)`
+`mcts.get_directions(params)`
 ####params : 
 `{"rt" => 21, "localestring" => "es/en_US"}`
 
@@ -57,7 +57,7 @@ Note: Max of 10 vid's or rt's, use either rt or vid cannot use both
 
 
 ###[GetStops](http://realtime.ridemcts.com/bustime/apidoc/v1/main.jsp?section=stops.jsp)
-`mcts.getstops(params)`
+`mcts.get_stops(params)`
 ####params : 
 `{"rt" => 21, "dir" => "EAST/WEST", "localestring" => "es/en_US"}`
 
@@ -67,7 +67,7 @@ Note: Max of 10 vid's or rt's, use either rt or vid cannot use both
 
 
 ###[GetPatterns](http://realtime.ridemcts.com/bustime/apidoc/v1/main.jsp?section=patterns.jsp)
-`mcts.getpatterns(params)`
+`mcts.get_patterns(params)`
 ####params : 
 `{"rt" => 21, "pid" => [list of pids], "localestring" => "es/en_US"}`
 

@@ -31,6 +31,18 @@ class MctsBustime
 
   def method_missing(method, *args)
     method = method.to_s
-    call("#{method}", *args)
+    actual_method = mapping(method)
+    call("#{actual_method}", *args)
+  end
+
+  def mapping(method_name)
+    path = case method_name
+    when "get_time" then "gettime"
+    when "get_routes" then "getroutes"
+    when "get_vehicles" then "getvehicles"
+    when "get_directions" then "getdirections"
+    when "get_stops" then "getstops"
+    when "get_patterns" then "getpatterns"
+    end
   end
 end
