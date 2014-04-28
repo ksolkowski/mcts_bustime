@@ -17,6 +17,8 @@ Or install it yourself as:
     mcts = MctsBustime.new("API_KEY")
 
 # Requests
+
+All "localestring" params are optional
 ###[GetTime](http://realtime.ridemcts.com/bustime/apidoc/v1/main.jsp?section=time.jsp)
 `mcts.get_time(params)`
 
