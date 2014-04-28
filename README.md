@@ -38,9 +38,9 @@ Or install it yourself as:
 
 ###[GetVehicles](http://realtime.ridemcts.com/bustime/apidoc/v1/main.jsp?section=vehicles.jsp)
 `mcts.get_vehicles(params)`
-####params : 
+####params : Note: Max of 10 vid's or rt's, use either rt or vid cannot use both
 `{"rt" => [route numbers], "vid" => [vehicle ids], "format" => "json/xml", "localestring" => "es/en_US"}`
-Note: Max of 10 vid's or rt's, use either rt or vid cannot use both
+
 
 ####response : 
 
@@ -68,14 +68,14 @@ Note: Max of 10 vid's or rt's, use either rt or vid cannot use both
 
 ###[GetPatterns](http://realtime.ridemcts.com/bustime/apidoc/v1/main.jsp?section=patterns.jsp)
 `mcts.get_patterns(params)`
-####params : 
+####params : Note: Use either rt or pid cannot use both, max 10 pid's can be used
 `{"rt" => 21, "pid" => [list of pids], "localestring" => "es/en_US"}`
 
 ####response : 
 
 `{"ptr"=>[{"pid"=>"14", "ln"=>"56976.0", "rtdir"=>"WEST", "pt"=>[{"seq"=>"1", "lat"=>"43.074722787153", "lon"=>"-87.878834582012", "typ"=>"S", "stpid"=>"2536", "stpnm"=>"KENWOOD + STOWELL", "pdist"=>"0.0"}]}]}`
 
-Note: Use either rt or pid cannot use both, max 10 pid's can be used
+
 
 
 
