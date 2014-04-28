@@ -19,13 +19,12 @@ class MctsBustime
     puts api_url+"?key=#{@api_key}&#{uri_params}" if @debug == true
     response = RestClient::Request.execute(:method => :get, :url => api_url+"?key=#{@api_key}&#{uri_params}", :timeout => -1)
     if !(params[:format] && params[:format].include?("json"))
-      doc = Nokogiri::XML.parse(response)
-      hash = Hash.from_xml(doc.to_s)
+      hash = Hash.from_xml(Nokogiri::XML.parse(response).to_s)
     else
       hash = YAML.load(response)
     end
 
-    response_hash =  hash["bustime_response"]
+    response_hash = hash["bustime_response"]
     response_hash
   end
 
